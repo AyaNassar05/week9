@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>    
+
+<body>
+    <script>
+        //task1
+        let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+
+
+        let word = mix.map((ele) => isNaN(ele) ? ele : "")
+            .reduce((acc, curr) => `${acc}${curr}`)
+
+        console.log(word);
+
+
+        //task2
+        let myString = "EElllzzzzzzzeroo";
+
+        let result = myString.split("")
+            .filter(function (ele, index, arr) {
+                return arr.indexOf(ele) === index
+            }).reduce((acc, curr) => `${acc}${curr}`)
+
+
+        console.log(result);
+
+
+
+
+
+
+        //task3
+        let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+        let flatArray = myArray
+            .reduce((acc, cur) => acc.concat(cur), [])
+            .reduce((acc, cur) => acc + cur);
+        console.log(flatArray);
+
+
+
+
+
+
+
+
+        //task4
+        let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+        let newArr = numsAndStrings.filter((ele) => typeof ele === 'number').map((ele) => -ele)
+
+        console.log(newArr); // [-1, -10, 10, 20, -5, -3]
+
+
+
+
+
+
+        //task5
+        let nums = [2, 12, 11, 5, 10, 1, 99];
+
+        let newNums = nums.reduce(function (acc, curr) {
+            if ((curr % 2) === 0) {
+                return acc * curr
+            } else {
+                return acc + curr
+            }
+        }, 1)
+
+
+        console.log(newNums); // 500
+
+
+    </script>
+</body>
+
+</html>
